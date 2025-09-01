@@ -23,7 +23,7 @@ import {
 } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import {
-  DollarSign,
+  IndianRupee,
   PlusCircle,
   Trash2,
   Sparkles,
@@ -50,7 +50,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 const formSchema = z.object({
   budget: z.coerce
     .number({ invalid_type_error: 'Please enter a valid number.' })
-    .min(1, { message: 'Budget must be at least $1.' }),
+    .min(100, { message: 'Budget must be at least ₹100.' }),
   items: z
     .array(
       z.object({
@@ -75,13 +75,13 @@ export default function GroceryBudgeter() {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      budget: 100,
+      budget: 5000,
       items: [
-        { name: 'Organic Bananas', quantity: 1 },
-        { name: 'Whole Milk (Gallon)', quantity: 1 },
-        { name: 'Avocados', quantity: 4 },
-        { name: 'Chicken Breast', quantity: 2 },
-        { name: 'Brown Rice', quantity: 1 },
+        { name: 'Basmati Rice (1kg)', quantity: 1 },
+        { name: 'Whole Milk (1L)', quantity: 1 },
+        { name: 'Onions (1kg)', quantity: 1 },
+        { name: 'Chicken Breast (500g)', quantity: 1 },
+        { name: 'Lentils (Toor Dal, 1kg)', quantity: 1 },
       ],
     },
   });
@@ -147,10 +147,10 @@ export default function GroceryBudgeter() {
                     <FormLabel className="font-semibold">Your Budget</FormLabel>
                     <FormControl>
                       <div className="relative">
-                        <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                        <IndianRupee className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                         <Input
                           type="number"
-                          placeholder="100"
+                          placeholder="5000"
                           className="pl-10"
                           {...field}
                         />
@@ -172,7 +172,7 @@ export default function GroceryBudgeter() {
                         render={({ field }) => (
                           <FormItem className="flex-1">
                             <FormControl>
-                              <Input placeholder="e.g., Avocados" {...field} />
+                              <Input placeholder="e.g., Basmati Rice" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -281,10 +281,10 @@ export default function GroceryBudgeter() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-3xl font-bold">
-                      ${budgetResult.estimatedTotalCost.toFixed(2)}
+                      ₹{budgetResult.estimatedTotalCost.toFixed(2)}
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      out of ${form.getValues('budget').toFixed(2)} budget
+                      out of ₹{form.getValues('budget').toFixed(2)} budget
                     </p>
                     <Progress
                       value={
@@ -302,10 +302,10 @@ export default function GroceryBudgeter() {
                       )}
                     >
                       {budgetResult.withinBudget
-                        ? `You're within budget! You have $${(
+                        ? `You're within budget! You have ₹${(
                             form.getValues('budget') - budgetResult.estimatedTotalCost
                           ).toFixed(2)} left.`
-                        : `You're over budget by $${(
+                        : `You're over budget by ₹${(
                             budgetResult.estimatedTotalCost - form.getValues('budget')
                           ).toFixed(2)}.`}
                     </p>
@@ -328,7 +328,7 @@ export default function GroceryBudgeter() {
                           >
                             <span className="font-medium">{item.name}</span>
                             <Badge variant="destructive">
-                              ${item.estimatedPrice.toFixed(2)}
+                              ₹{item.estimatedPrice.toFixed(2)}
                             </Badge>
                           </li>
                         ))}

@@ -20,7 +20,7 @@ const BudgetAwareListInputSchema = z.object({
       })
     )
     .describe('A list of grocery items with their quantities.'),
-  budget: z.number().describe('The user’s budget for the shopping list.'),
+  budget: z.number().describe('The user’s budget for the shopping list in INR.'),
 });
 
 export type BudgetAwareListInput = z.infer<typeof BudgetAwareListInputSchema>;
@@ -43,17 +43,17 @@ export type BudgetAwareListOutput = z.infer<typeof BudgetAwareListOutputSchema>;
 const getItemPrice = ai.defineTool(
   {
     name: 'getItemPrice',
-    description: 'Returns the current market price of a grocery item.',
+    description: 'Returns the current market price of a grocery item in Indian Rupees (₹).',
     inputSchema: z.object({
       itemName: z.string().describe('The name of the grocery item.'),
     }),
-    outputSchema: z.number().describe('The price of the item.'),
+    outputSchema: z.number().describe('The price of the item in INR.'),
   },
   async input => {
     // TODO: Implement the logic to fetch the item price from an external source.
     // This is a placeholder implementation that returns a random price.
     // Replace this with a real implementation that fetches the price from an API or database.
-    return Math.random() * 5 + 1; // Returns a random price between $1 and $6.
+    return Math.random() * 250 + 50; // Returns a random price between ₹50 and ₹300.
   }
 );
 
@@ -62,9 +62,9 @@ const budgetAwareListPrompt = ai.definePrompt({
   tools: [getItemPrice],
   input: {schema: BudgetAwareListInputSchema},
   output: {schema: BudgetAwareListOutputSchema},
-  prompt: `You are a helpful shopping assistant that estimates the total cost of a shopping list and highlights expensive items.
+  prompt: `You are a helpful shopping assistant that estimates the total cost of a shopping list and highlights expensive items. Prices are in Indian Rupees (₹).
 
-  The user has a budget of \${{budget}}. Here is the list of items:
+  The user has a budget of ₹{{budget}}. Here is the list of items:
   {{#each items}}
   - {{quantity}} x {{name}}
   {{/each}}
