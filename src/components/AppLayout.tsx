@@ -24,13 +24,16 @@ import {
 
 const navItems = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '#', label: 'Shopping List', icon: ListTodo },
-  { href: '#', label: 'Recipes', icon: BookOpen },
-  { href: '#', label: 'Pantry', icon: Archive },
+  { href: '/shopping-list', label: 'Shopping List', icon: ListTodo },
+  { href: '/recipes', label: 'Recipes', icon: BookOpen },
+  { href: '/pantry', label: 'Pantry', icon: Archive },
 ];
 
 const pageTitles: { [key: string]: string } = {
   '/': 'Dashboard',
+  '/shopping-list': 'Shopping List',
+  '/recipes': 'Recipes',
+  '/pantry': 'Pantry',
   // Add other page titles here as they are created
 };
 
@@ -53,7 +56,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           <SidebarMenu>
             {navItems.map((item) => (
               <SidebarMenuItem key={item.label}>
-                <Link href={item.href}>
+                <Link href={item.href} passHref>
                   <SidebarMenuButton
                     asChild
                     isActive={pathname === item.href}
