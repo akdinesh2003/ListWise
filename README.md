@@ -48,7 +48,7 @@ Make sure you have the following software installed on your system:
 ### Running the Development Server
 
 1.  **Set up your environment variables**:
-    You will need a `.env` file at the root of your project. If you are using Google AI, you'll need to add your API key to it:
+    You will need a `.env` file at the root of your project. If you are using Google AI, you'll need to add your API key to it. **Replace `your_google_ai_api_key_here` with your actual key.**
     ```.env
     GEMINI_API_KEY=your_google_ai_api_key_here
     ```
