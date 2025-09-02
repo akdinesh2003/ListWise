@@ -1,17 +1,5 @@
 # ListWise - Your Smart Cart Companion
 
-<p align="center">
-  <img src="https://picsum.photos/400/200?grayscale" alt="ListWise Banner" data-ai-hint="grocery app banner" style="border-radius: 8px;" />
-</p>
-
-<p align="center">
-  <strong>Smart Grocery, Smarter Budget.</strong>
-  <br />
-  ListWise is a Next.js application designed to make your grocery shopping more efficient and budget-friendly. Leveraging the power of AI, it provides cost estimations for your shopping list, identifies expensive items, and even suggests recipes you can make with your selected ingredients.
-</p>
-
----
-
 ## ✨ Features
 
 -   **🤖 AI Budget Assistant**: Get an AI-powered analysis of your shopping list to see if you're within budget.
@@ -76,9 +64,5 @@ Make sure you have the following software installed on your system:
 
 ## ✍️ Author
 
--   **Name**: [Your Name Here]
--   **Profile**: [Your Website/GitHub Link Here]
-
----
-
-<p align="center">Made with ❤️ for smart shoppers everywhere.</p>
+-   **Name**: AK DINESH
+-   **Profile**: https://github.com/akdinesh2003
