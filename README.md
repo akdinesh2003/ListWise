@@ -1,68 +1,81 @@
-# ListWise - Your Smart Cart Companion
+# 🧾 ListWise – Your Smart Cart Companion
+
+**Smart Grocery. Smarter Budget.**  
+ListWise is a modern, AI-powered grocery planning app designed to make shopping more efficient, budget-conscious, and personalized. Built with Next.js, ShadCN UI, and Tailwind CSS, it helps users manage their grocery list, pantry, and recipes — all in one place.
+
+---
 
 ## ✨ Features
 
--   **🤖 AI Budget Assistant**: Get an AI-powered analysis of your shopping list to see if you're within budget.
--   **💸 Expensive Item Alerts**: The AI automatically flags items that are taking up a large portion of your budget.
--   **🧑‍🍳 AI Recipe Suggestions**: Discover new meal ideas with recipes generated based on your grocery list.
--   **🛒 Integrated Shopping Tools**: Manage your shopping list, pantry inventory, and saved recipes all in one place.
--   **Modern UI**: A clean, intuitive, and responsive interface built with Next.js, ShadCN UI, and Tailwind CSS.
--   **Genkit Powered**: Utilizes Google's Genkit for state-of-the-art generative AI capabilities.
+- 🤖 **AI Budget Assistant** – Analyze your grocery list to see if you're within budget.
+- 💸 **Expensive Item Alerts** – Automatically flags items that take up a large portion of your budget.
+- 🧑‍🍳 **AI Recipe Suggestions** – Discover meal ideas based on your current grocery items.
+- 🛒 **Integrated Shopping Tools** – Manage your shopping list, pantry inventory, and saved recipes.
+- 🧼 **Modern UI** – Clean, intuitive, and responsive interface.
+- ⚙️ **Genkit Powered** – Uses Google's Genkit for advanced generative AI capabilities.
+
+---
 
 ## 🚀 Getting Started
 
-Follow these instructions to get a local copy of the project up and running on your machine for development and testing purposes.
+Follow these instructions to get a local copy of the project up and running for development and testing.
 
 ### Prerequisites
 
-Make sure you have the following software installed on your system:
-*   [Node.js](https://nodejs.org/) (v18 or later recommended)
-*   [npm](https://www.npmjs.com/) (or your preferred package manager like Yarn or pnpm)
+Make sure you have the following installed:
+
+- Node.js (v18 or later recommended)
+- npm (or Yarn / pnpm)
 
 ### Installation
 
-1.  **Clone the repository** (if you haven't already):
-    ```sh
-    git clone <your-repository-url>
-    cd <your-project-directory>
-    ```
+```bash
+git clone https://github.com/akdinesh2003/ListWise.git
+cd ListWise
+npm install
+```
 
-2.  **Install dependencies**:
-    This will install all the necessary packages for the project to run.
-    ```sh
-    npm install
-    ```
+---
 
-### Running the Development Server
+## 🔐 Environment Setup
 
-1.  **Set up your environment variables**:
-    You will need a `.env` file at the root of your project. If you are using Google AI, you'll need to add your API key to it. **Replace `your_google_ai_api_key_here` with your actual key.**
-    ```.env
-    GEMINI_API_KEY=your_google_ai_api_key_here
-    ```
+Create a `.env` file in the root of your project and add your **own API key** for Google AI:
 
-2.  **Start the application**:
-    This command runs the app in development mode with hot-reloading enabled.
-    ```sh
-    npm run dev
-    ```
+```env
+GEMINI_API_KEY=your_google_ai_api_key_here
+```
 
-3.  **Open the app**:
-    Open [http://localhost:9002](http://localhost:9002) with your browser to see the result.
+> ⚠️ **Important:** You must use your own API key. This project does not include or expose any shared or public keys.
+
+---
+
+## 🧪 Running the Development Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:9002](http://localhost:9002) in your browser to view the app.
+
+---
 
 ## 📝 How to Use
 
--   **Dashboard / AI Budget Assistant**:
-    1.  Navigate to the **Dashboard**.
-    2.  Enter your total budget in the "Your Budget" field.
-    3.  Add or remove items from the "Grocery Items" list.
-    4.  Click **"Analyze My List"**. The AI will calculate the estimated total cost and show you a budget analysis.
-    5.  After the analysis, click **"Get Recipe Ideas"** to see what you can cook with your items.
+### 🧠 Dashboard / AI Budget Assistant
 
--   **Shopping List, Recipes, Pantry**:
-    -   Click on the corresponding links in the sidebar to view your saved shopping lists, recipes, and pantry items. (These are currently static but can be expanded with database functionality).
+- Enter your total budget in the "Your Budget" field.
+- Add or remove items from the "Grocery Items" list.
+- Click **Analyze My List** to view budget insights.
+- Click **Get Recipe Ideas** to generate meals based on your items.
+
+### 🛒 Shopping List, Recipes, Pantry
+
+- Use the sidebar to navigate between your saved lists, recipes, and pantry items.
+- These sections are currently static but can be expanded with database integration.
+
+---
 
 ## ✍️ Author
 
--   **Name**: AK DINESH
--   **Profile**: https://github.com/akdinesh2003
+**Name:** AK DINESH  
+**GitHub:** [akdinesh2003](https://github.com/akdinesh2003)
